@@ -13,19 +13,23 @@ Vagrant installed on your local machine and VirtualBox or another compatible vir
 2. Run 'vagrant up' to start and provision the VMs.
 3. You can customize the LAMP stack further by modifying the script.sh script to suit your specific application requirements, such as database setup or web server configuration adjustments.
 
+**Vagrant file**
+
+This is the configuration file for Vagrant, a tool for building and managing virtualized development environments. The Vagrantfile defines the virtual machines (VMs) you want to create and configure, specifying things like the base box (in your case, Ubuntu-based), network settings, and provisioning scripts. It's the blueprint for VMs.
+
 **Bash scripting**
 
 The script.sh on the "Master" node performs the following tasks:
 
-1. System Updates: The script begins by updating the system packages to ensure that you have the latest software.
+1. System Updates: The script begins by updating the system packages to ensure that packages have the latest software.
 
 2. Installation of LAMP Components: It installs Apache, MySQL, and PHP on the server, setting up the foundational components of the LAMP stack.
 
-3. Cloning a PHP Application: The script clones a PHP application from a GitHub repository, allowing you to easily deploy and serve web applications.
+3. Cloning a PHP Application: The script clones a PHP application from a GitHub repository, allowing easy deployment and serving of web applications.
 
 4. Package Installation: Any additional packages required for the PHP application are installed. This ensures that the application runs smoothly.
 
-5. Apache and MySQL Configuration: The script configures the Apache web server and MySQL to make them compatible with your PHP application.
+5. Apache and MySQL Configuration: The script configures the Apache web server and MySQL to make them compatible with the PHP application.
 
 **Ansible provisioning on slave**
 
