@@ -43,9 +43,9 @@ php -v
 laravel_conf_file="/etc/apache2/sites-available/laravel.conf"
 cat > "$laravel_conf_file" <<EOF
 <VirtualHost *:80>
-    ServerAdmin webmaster@localhost
+    ServerAdmin user
     DocumentRoot /var/www/laravel/public
-    ServerName localhost
+    ServerName 127.0.0.1/8/
 
     <Directory /var/www/laravel/public>
         Options Indexes FollowSymLinks
