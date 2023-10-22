@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update the application packages
-
+sudo apt update
 # Clone the Laravel repository from GitHub
 sudo apt install git -y
 
