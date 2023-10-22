@@ -1,0 +1,29 @@
+---
+- name: Execute Script and Set Up Cron Job on Slave Node
+  hosts: Slave
+  become: yes
+
+  tasks:
+    - name: Copy and make the bash script executable
+      copy:
+        src: /path/to/your/local/slave.sh
+        dest: /tmp/slave.sh
+        mode: 0755
+
+    - name: Execute the bash script
+      shell: /tmp/slave.sh
+
+    - name: Create /var/log/uptime.log directory and give execute permissions
+      file:
+        path: /var/log/uptime.log
+        state: directory
+        owner: root
+        group: root
+        mode: 0755
+
+    - name: Set up the cron job to check server uptime and send email
+      cron:
+        name: Check server uptime and send email
+        minute: "0"
+        hour: "0"
+        job: "uptime >> /var/log/uptime.log"
