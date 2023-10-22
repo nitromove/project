@@ -4,6 +4,7 @@
 
 # Clone the Laravel repository from GitHub
 sudo apt install git -y
+sudo mkdir -p /var/www/
 cd /var/www/
 sudo git clone https://github.com/laravel/laravel.git
 
