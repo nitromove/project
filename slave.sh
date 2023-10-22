@@ -24,7 +24,7 @@ sudo ufw status
 #Installing mySQl
 sudo apt update -y
 sudo apt install mysql-server
-sudo systemctl start mysql.service
+
 
 #configure mysql
 sudo apt --fix-missing install
