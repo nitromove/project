@@ -22,24 +22,24 @@ sudo apt install apache2 -y
 sudo ufw allow in "Apache"
 sudo ufw status
 
-#Installing mySQl
+#Installing MySQL 
 sudo apt update -y
 sudo apt install mysql-server
 
 
-#configure mysql
+# MySQL configuration 
 sudo apt --fix-missing install
 sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 exit
 
-Installing PHP and its required modules
+# Installing PHP and its required modules
 sudo apt install php libapache2-mod-php php-mysql -y
 
-Verifying PHP version
+# Verifying PHP version
 php -v
 
-Setting up Laravel virtual host
+# Setting up Laravel virtual host
 laravel_conf_file="/etc/apache2/sites-available/laravel.conf"
 cat > "$laravel_conf_file" <<EOF
 <VirtualHost *:80>
