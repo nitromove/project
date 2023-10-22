@@ -11,6 +11,7 @@ Vagrant installed on your local machine and VirtualBox or another compatible vir
 **Usage**
 1. Clone this repository to your local machine.
 2. Run 'vagrant up' to start and provision the VMs.
+3. You can customize the LAMP stack further by modifying the script.sh script to suit your specific application requirements, such as database setup or web server configuration adjustments.
 
 **Bash scripting**
 
@@ -22,4 +23,5 @@ The script.sh on the "Master" node performs the following tasks:
 4. Configures the Apache web server and MySQL.
 
 **Ansible provisioning on slave**
+
 Using Ansible, the execute_script.yml playbook executes the script.sh on the "Slave" node. This Ansible playbook also sets up a cron job to check the server's uptime at 12 am.
