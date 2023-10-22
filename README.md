@@ -14,6 +14,7 @@ Vagrant installed on your local machine and VirtualBox or another compatible vir
 3. You can customize the LAMP stack further by modifying the script.sh script to suit your specific application requirements, such as database setup or web server configuration adjustments.
 
 **File structure**
+
 Every code file within the project has a distinct role, working in unison to facilitate automated provisioning, deploy the LAMP stack, and validate the environment.
 
 **Vagrant file**
