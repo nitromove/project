@@ -24,4 +24,8 @@ The script.sh on the "Master" node performs the following tasks:
 
 **Ansible provisioning on slave**
 
-Using Ansible, the execute_script.yml playbook executes the script.sh on the "Slave" node. This Ansible playbook also sets up a cron job to check the server's uptime at 12 am.
+This is an Ansible playbook designed to be executed on the "Slave" server. It coordinates the execution of the script.sh from the "Master" server and performs other tasks:
+
+1. Copying the Bash Script: The playbook copies the script.sh from the "Master" server to the "Slave" server, making it available for execution.
+2. Executing the Bash Script: The playbook runs the bash script on the "Slave" server, allowing you to automate the setup of the LAMP stack on this server.
+3. Cron Job Setup: It also sets up a cron job to check the server's uptime every day at 12 am. This is done using Ansible's capabilities to manage 
