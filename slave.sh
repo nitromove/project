@@ -22,12 +22,15 @@ sudo ufw allow in "Apache"
 sudo ufw status
 
 #Installing mySQl
-sudo apt install mysql-server -y
+sudo apt update -y
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+
+#configure mysql
+sudo apt --fix-missing install
 sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 exit
-sudo mysql_secure_installation -y
-sudo apt --fix-missing install
 
 Installing PHP and its required modules
 sudo apt install php libapache2-mod-php php-mysql -y
