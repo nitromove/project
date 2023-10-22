@@ -5,6 +5,7 @@
 # Clone the Laravel repository from GitHub
 sudo apt install git -y
 
+# Creating laravel directory if it doesn't exist
 web_dir="/var/www/laravel"
 if [ ! -d "$web_dir" ]; then
     sudo mkdir -p "$web_dir"
@@ -69,8 +70,11 @@ php_info_file="/var/www/default/info.php"
 echo "<?php phpinfo();" > "$php_info_file"
 
 # Copy php file to server directory
-sudo cp test.php /var/www/html/
 
+# Copy php file to server directory if it exists
+if [ -f "test.php" ]; then
+    sudo cp test.php /var/www/html/
+fi
 
 # Enabling the PHP info site
 a2ensite default
