@@ -7,3 +7,7 @@ This project automates the provisioning of two Ubuntu-based servers, named "Mast
 **Requirements**
 
 Vagrant installed on your local machine and VirtualBox or another compatible virtualization provider.
+
+**Usage**
+1. Clone this repository to your local machine.
+2. Run 'vagrant up' to start and provision the VMs.
