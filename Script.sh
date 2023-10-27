@@ -43,18 +43,12 @@ php -v
 laravel_conf_file="/etc/apache2/sites-available/laravel.conf"
 cat > "$laravel_conf_file" <<EOF
 <VirtualHost *:80>
-    ServerAdmin user
-    DocumentRoot /var/www/laravel/public
-    ServerName 127.0.0.1/8/
-
-    <Directory /var/www/laravel/public>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog \${APACHE_LOG_DIR}/error.log
-    CustomLog \${APACHE_LOG_DIR}/access.log combined
+    ServerName 192.168.56.14
+    ServerAlias www.192.168.56.14 
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/192.168.56.14
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 EOF
 
