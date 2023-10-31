@@ -1,19 +1,20 @@
 ---
-- name: Execute Script and Set Up Cron Job on Slave Node
+- name: Deploy LAMP Stack
   hosts: Slave
   become: yes
-
   tasks:
-    - name: Copy and make the bash script executable
+    - name: Copy Bash Script
       copy:
-        src: /path/to/your/local/slave.sh
-        dest: /tmp/slave.sh
+        src: files/lamp_setup.sh
+        dest: /tmp/lamp_setup.sh
         mode: 0755
 
-    - name: Execute the bash script
-      shell: /tmp/slave.sh
+    - name: Execute Bash Script
+      shell: /tmp/lamp_setup.sh
+      args:
+        creates: /var/www/laravel/.deployed  # Ensure idempotence
 
-    - name: Create /var/log/uptime.log directory and give execute permissions
+    - name: Create Uptime Log Directory
       file:
         path: /var/log/uptime.log
         state: directory
@@ -21,9 +22,9 @@
         group: root
         mode: 0755
 
-    - name: Set up the cron job to check server uptime and send email
+    - name: Set Up Cron Job for Uptime
       cron:
-        name: Check server uptime and send email
-        minute: "0"
-        hour: "0"
+        name: Check Server Uptime
+        minute: 0
+        hour: 0
         job: "uptime >> /var/log/uptime.log"
